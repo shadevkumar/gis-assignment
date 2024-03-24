@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
 
     // Check on mount
@@ -21,20 +21,21 @@ export default function Home() {
     // Cleanup
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
+
   console.log("render");
   return (
     <>
       <section className="flex flex-col">
         {isMobile && (
-          <div className="flex w-screen bg-blue-950 justify-around items-center text-[#d1d1d1] sticky top-0 ">
+          <div className="sticky top-0 flex w-screen items-center justify-around bg-blue-950 text-[#d1d1d1] ">
             <button
               onClick={() => {
                 setActiveComponent("DiscussionForum");
               }}
-              className={`w-1/2 py-2 flex items-center justify-center text-lg font-bold ${
+              className={`flex w-1/2 items-center justify-center py-2 text-lg font-bold ${
                 activeComponent === "DiscussionForum"
-                  ? "bg-black bg-opacity-30 text-white border-b-4 border-red-900"
-                  : "hover:bg-black hover:bg-opacity-30 hover:text-white border-b-4 border-blue-950 hover:border-red-900"
+                  ? "border-b-4 border-red-900 bg-black bg-opacity-30 text-white"
+                  : "border-b-4 border-blue-950 hover:border-red-900 hover:bg-black hover:bg-opacity-30 hover:text-white"
               }`}
             >
               Discussion Forum
@@ -43,10 +44,10 @@ export default function Home() {
               onClick={() => {
                 setActiveComponent("MarketStories");
               }}
-              className={`w-1/2 py-2 flex items-center justify-center text-lg font-bold ${
+              className={`flex w-1/2 items-center justify-center py-2 text-lg font-bold ${
                 activeComponent === "MarketStories"
-                  ? "bg-black bg-opacity-30 text-white border-b-4 border-red-900"
-                  : "hover:bg-black hover:bg-opacity-30 hover:text-white border-b-4 border-blue-950 hover:border-red-900"
+                  ? "border-b-4 border-red-900 bg-black bg-opacity-30 text-white"
+                  : "border-b-4 border-blue-950 hover:border-red-900 hover:bg-black hover:bg-opacity-30 hover:text-white"
               }`}
             >
               Market Stories
@@ -54,7 +55,9 @@ export default function Home() {
           </div>
         )}
 
-        <div className={`${isMobile ? "block" : "flex"}  w-full `}>
+        <div
+          className={`${isMobile ? "block" : "flex"} w-full justify-between  `}
+        >
           {activeComponent === "DiscussionForum" || !isMobile ? (
             <DiscussionForum />
           ) : null}
