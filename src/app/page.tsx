@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <section className="flex flex-col">
         {isMobile && (
-          <div className="flex w-screen bg-blue-950 justify-around items-center text-[#d1d1d1] ">
+          <div className="flex w-screen bg-blue-950 justify-around items-center text-[#d1d1d1] sticky top-0 ">
             <button
               onClick={() => {
                 setActiveComponent("DiscussionForum");
