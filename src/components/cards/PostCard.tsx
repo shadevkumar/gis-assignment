@@ -3,46 +3,52 @@ import { IoEyeOutline } from "react-icons/io5";
 import { FcComments } from "react-icons/fc";
 import { FiShare2 } from "react-icons/fi";
 import { FiMessageSquare } from "react-icons/fi";
+import Image from "next/image";
 
 interface PostCard {
   username: string;
-  postTitle: string;
+  postDescription: string;
 }
 
-const PostCard = ({ username, postTitle }: PostCard) => {
+const PostCard = ({ username, postDescription }: PostCard) => {
   return (
-    <div className=" bg-slate-200 m-4 px-4 py-2 rounded-xl ">
+    <div className=" my-2 cursor-pointer rounded-md bg-slate-100 px-1 py-2 shadow-lg max-md:my-2 sm:px-3 md:m-3 md:px-4 lg:m-4">
       <div className="flex items-center justify-between">
-        <div className="flex  items-center gap-4">
-          <div className="w-10 h-10 mt-1 bg-blue-700 rounded-full"></div>
-          <span>Shadev Kumar</span>
-          <div className="bg-blue-800 text-white px-4 py-1 text-xs rounded-full">
+        <div className="flex  items-center gap-2 md:gap-4">
+          <Image
+            alt={username}
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width={30}
+            height={30}
+            className="mt-1 h-6 w-6 rounded-full  max-md:mx-1 sm:h-8 sm:w-8 md:h-10 md:w-10"
+          ></Image>
+          <span className="text-base md:text-lg">{username}</span>
+          <div className="rounded-full bg-blue-800  px-2 py-1 text-[7px] text-white sm:text-[10px] md:px-4 md:text-xs">
             Sector 2
           </div>
         </div>
-        <span className="text-blue-800 text-xs">2 min ago</span>
+        <span className="pr-2 text-[10px] text-blue-800 sm:text-xs">
+          2 min ago
+        </span>
       </div>
-      <div className=" mx-14">
-        <p>
-          {postTitle} Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Debitis eos accusamus nemo.
-        </p>
+      <div className="px-9 py-1 text-sm sm:px-12 md:px-14 md:text-base ">
+        <p>{postDescription}</p>
       </div>
-      <div className="flex mx-14 gap-2 md:gap-12 my-2">
+      <div className="my-2 flex gap-4 px-9 sm:px-12 md:gap-12 md:px-14">
         <div className="flex items-center gap-2">
-          <FaRegHeart className="text-xl" />
+          <FaRegHeart className="text-lg sm:text-xl" />
           <span className="text-xs">2k</span>
         </div>
         <div className="flex items-center gap-2">
-          <IoEyeOutline className="text-xl" />
+          <IoEyeOutline className="text-lg sm:text-xl" />
           <span className="text-xs">2k</span>
         </div>
         <div className="flex items-center gap-2">
-          <FiMessageSquare className="text-xl " />
+          <FiMessageSquare className="text-lg sm:text-xl" />
           <span className="text-xs">2k Comments</span>
         </div>
         <div className="flex items-center gap-2">
-          <FiShare2 className="text-xl" />
+          <FiShare2 className="text-lg sm:text-xl" />
           <span className="text-xs">Share</span>
         </div>
       </div>
