@@ -26,7 +26,7 @@ const MarketStories = () => {
     fetchMarketStories();
   }, []);
   return (
-    <div className="  scrollbar-hide flex max-h-screen min-h-screen w-full  flex-col  items-center  overflow-y-scroll   px-2 lg:w-4/12 xl:min-w-[25vw] xl:max-w-[27vw]">
+    <div className="scrollbar-hide sticky top-0 flex max-h-screen  w-full flex-col  items-center  overflow-y-scroll    px-2 lg:w-4/12 xl:w-3/12 xl:min-w-[25vw] xl:max-w-[27vw]">
       <div className="sticky top-0 hidden  w-full  items-center  justify-center  px-1 py-3 backdrop-blur-2xl sm:px-3 md:px-4 lg:flex">
         <h1 className="text-2xl font-semibold text-red-700 xl:text-3xl">
           {" "}

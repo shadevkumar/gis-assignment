@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex flex-col">
+      <section className="flex flex-col ">
         {isMobile && (
           <div className="sticky top-0 flex w-screen items-center justify-around bg-blue-950 text-[#d1d1d1] ">
             <button
