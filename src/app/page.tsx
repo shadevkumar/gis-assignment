@@ -22,7 +22,6 @@ export default function Home() {
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
-  console.log("render");
   return (
     <>
       <section className="flex flex-col">

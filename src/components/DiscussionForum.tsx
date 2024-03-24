@@ -10,15 +10,6 @@ interface Forum {
   id: number;
 }
 
-// "id": 1,
-//    "username": "Shadev Kumar",
-//    "postDescription": "Analyzing the impact of the recent RBI policy announcement on banking stocks. Should we buy SBI or HDFC Bank?",
-//    "sector": "IT",
-//    "time_posted": "2 min ago",
-//    "likescount": "2k",
-//    "viewscount": "10k",
-//    "totalComments": "500 comments"
-
 const DiscussionForum = () => {
   const [forumData, setForumData] = useState([]);
 
