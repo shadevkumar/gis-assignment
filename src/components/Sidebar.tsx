@@ -10,7 +10,7 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { NAV_LINKS } from "@/constants/Constant";
 import Link from "next/link";
 
-const SideBar = () => {
+const Sidebar = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [showProfile, setSshowProfile] = useState(false);
@@ -105,4 +105,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Sidebar;
