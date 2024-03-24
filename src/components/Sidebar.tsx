@@ -73,7 +73,7 @@ const SideBar = () => {
               <Link
                 href="/"
                 key={link.key}
-                className="hover:text-whitemd:text-lg cursor-pointer px-8 py-1 text-base hover:bg-black hover:bg-opacity-30"
+                className="cursor-pointer px-8 py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg"
               >
                 {link.label}
               </Link>
