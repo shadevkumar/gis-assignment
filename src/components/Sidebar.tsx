@@ -27,7 +27,7 @@ const Sidebar = () => {
       <div
         className={`sidebar ${
           toggleSidebar && "hidden"
-        } sticky top-0 z-50  min-h-screen bg-blue-950 text-[#d1d1d1] max-lg:w-[40vw] max-lg:max-w-80 max-md:w-[45vw]  max-sm:w-[55vw] lg:w-[22vw] xl:w-[20vw]`}
+        } sticky top-0 z-50  min-h-screen bg-blue-950 text-[#d1d1d1] max-lg:w-[40vw] max-lg:max-w-80 max-md:w-[45vw]  max-sm:w-[55vw] lg:w-[22vw] xl:w-[20vw] 2xl:w-[15vw]`}
       >
         <div className="flex h-20 items-center justify-between  border-b border-[#d1d1d1] px-6">
           <div className="relative flex  cursor-pointer items-center gap-1">

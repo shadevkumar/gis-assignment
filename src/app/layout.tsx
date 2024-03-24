@@ -17,9 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex min-h-screen`}>
+      <body className={`${inter.className}  flex min-h-screen `}>
         <Sidebar />
-        <main className=" max-h-screen overflow-y-scroll">{children}</main>
+        <main className=" max-h-screen w-screen items-center justify-center overflow-y-scroll ">
+          {children}
+        </main>
       </body>
     </html>
   );

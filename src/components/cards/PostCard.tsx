@@ -13,7 +13,7 @@ interface PostCard {
 
 const PostCard = ({ username, postDescription }: PostCard) => {
   return (
-    <div className=" my-2 cursor-pointer rounded-md  px-1 py-2 shadow-lg hover:shadow-xl max-md:my-2 sm:px-3 md:m-3 md:px-4 lg:m-4">
+    <div className="my-2 w-full cursor-pointer rounded-md px-1  py-2 shadow-lg hover:shadow-xl max-md:my-2 sm:px-3 md:m-3 md:px-4 lg:m-4 lg:w-[90%] 2xl:w-[80%] ">
       <div className="flex items-center justify-between">
         <div className="flex  items-center gap-2 md:gap-4">
           <Image
