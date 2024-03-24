@@ -10,8 +10,10 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { NAV_LINKS } from "@/constants/Constant";
 import Link from "next/link";
 
-const Sidebar = () => {
+const SideBar = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
+  const [showProfile, setSshowProfile] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -28,23 +30,41 @@ const Sidebar = () => {
         } sticky top-0 z-50  min-h-screen bg-blue-950 text-[#d1d1d1] max-lg:w-[40vw] max-lg:max-w-80 max-md:w-[45vw]  max-sm:w-[55vw] lg:w-[22vw] xl:w-[20vw]`}
       >
         <div className="flex h-20 items-center justify-between  border-b border-[#d1d1d1] px-6">
-          <div className="flex  cursor-pointer items-center gap-1">
-            <BiSolidUser className="rounded-full p-1 text-3xl hover:bg-blue-900 hover:text-white" />{" "}
+          <div className="relative flex  cursor-pointer items-center gap-1">
+            <BiSolidUser
+              onMouseEnter={() => setSshowProfile(true)}
+              onMouseLeave={() => setSshowProfile(false)}
+              className="rounded-full p-1 text-3xl hover:bg-black hover:bg-opacity-30 hover:text-white "
+            />{" "}
             <span className="text-base font-medium md:text-xl ">
               Hello, User
             </span>
+            {showProfile && (
+              <div className="absolute top-6 rounded-md bg-blue-900 p-1 px-2 text-xs">
+                Profile
+              </div>
+            )}
           </div>
-          <div className="relative flex  cursor-pointer items-center">
+          <div
+            onMouseEnter={() => setShowNotification(true)}
+            onMouseLeave={() => setShowNotification(false)}
+            className="relative flex  cursor-pointer items-center"
+          >
             <IoNotifications className="text-2xl hover:text-white" />
             <FaCircle className="absolute right-[2px] top-0 text-[0.5rem] text-red-600" />
+            {showNotification && (
+              <div className="absolute top-6 rounded-md bg-blue-900 p-1 px-2 text-xs">
+                Notifications
+              </div>
+            )}
           </div>
         </div>
         <div className="flex flex-col text-lg font-medium ">
-          <div className="flex cursor-pointer items-center gap-2 px-2  py-1 text-base hover:bg-blue-900 hover:text-white md:text-lg">
+          <div className="flex cursor-pointer items-center gap-2 px-2  py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg">
             <BiSolidMessageAltDetail />
             <span>Discussion Forum</span>
           </div>
-          <div className="flex cursor-pointer items-center gap-2 px-2 py-1 text-base hover:bg-blue-900 hover:text-white md:text-lg">
+          <div className="flex cursor-pointer items-center gap-2 px-2 py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg">
             <FaMagnifyingGlassDollar />
             <span>Market Stories</span>
           </div>
@@ -53,7 +73,7 @@ const Sidebar = () => {
               <Link
                 href="/"
                 key={link.key}
-                className="cursor-pointer px-8 py-1 text-base hover:bg-blue-900 hover:text-white md:text-lg"
+                className="hover:text-whitemd:text-lg cursor-pointer px-8 py-1 text-base hover:bg-black hover:bg-opacity-30"
               >
                 {link.label}
               </Link>
@@ -85,4 +105,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
