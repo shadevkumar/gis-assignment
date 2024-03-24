@@ -10,7 +10,7 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { NAV_LINKS } from "@/constants/Constant";
 import Link from "next/link";
 
-const SideBar = () => {
+const Sidebar = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [showProfile, setSshowProfile] = useState(false);
@@ -73,7 +73,7 @@ const SideBar = () => {
               <Link
                 href="/"
                 key={link.key}
-                className="hover:text-whitemd:text-lg cursor-pointer px-8 py-1 text-base hover:bg-black hover:bg-opacity-30"
+                className="cursor-pointer px-8 py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg"
               >
                 {link.label}
               </Link>
@@ -105,4 +105,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Sidebar;
