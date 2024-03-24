@@ -4,6 +4,7 @@ import { FcComments } from "react-icons/fc";
 import { FiShare2 } from "react-icons/fi";
 import { FiMessageSquare } from "react-icons/fi";
 import Image from "next/image";
+import { COMMON_USER_IMAGE } from "@/constants/Constant";
 
 interface PostCard {
   username: string;
@@ -12,12 +13,12 @@ interface PostCard {
 
 const PostCard = ({ username, postDescription }: PostCard) => {
   return (
-    <div className=" my-2 cursor-pointer rounded-md bg-slate-100 px-1 py-2 shadow-lg max-md:my-2 sm:px-3 md:m-3 md:px-4 lg:m-4">
+    <div className=" my-2 cursor-pointer rounded-md  px-1 py-2 shadow-lg hover:shadow-xl max-md:my-2 sm:px-3 md:m-3 md:px-4 lg:m-4">
       <div className="flex items-center justify-between">
         <div className="flex  items-center gap-2 md:gap-4">
           <Image
             alt={username}
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={COMMON_USER_IMAGE}
             width={30}
             height={30}
             className="mt-1 h-6 w-6 rounded-full  max-md:mx-1 sm:h-8 sm:w-8 md:h-10 md:w-10"
