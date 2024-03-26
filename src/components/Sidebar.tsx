@@ -82,7 +82,8 @@ const Sidebar = () => {
             {NAV_LINKS.map((link) => (
               <Link
                 href="#"
-                onClick={() => {
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                  e.preventDefault();
                   setToggleSidebar(!toggleSidebar);
                 }}
                 key={link.key}
