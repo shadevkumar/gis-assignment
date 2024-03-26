@@ -60,18 +60,31 @@ const Sidebar = () => {
           </div>
         </div>
         <div className="flex flex-col text-lg font-medium ">
-          <div className="flex cursor-pointer items-center gap-2 px-2  py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg">
+          <div
+            onClick={() => {
+              setToggleSidebar(!toggleSidebar);
+            }}
+            className="flex cursor-pointer items-center gap-2 px-2  py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg"
+          >
             <BiSolidMessageAltDetail />
             <span>Discussion Forum</span>
           </div>
-          <div className="flex cursor-pointer items-center gap-2 px-2 py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg">
+          <div
+            onClick={() => {
+              setToggleSidebar(!toggleSidebar);
+            }}
+            className="flex cursor-pointer items-center gap-2 px-2 py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg"
+          >
             <FaMagnifyingGlassDollar />
             <span>Market Stories</span>
           </div>
           <ul className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
-                href="/"
+                href="#"
+                onClick={() => {
+                  setToggleSidebar(!toggleSidebar);
+                }}
                 key={link.key}
                 className="cursor-pointer px-8 py-1 text-base hover:bg-black hover:bg-opacity-30 hover:text-white md:text-lg"
               >
@@ -93,16 +106,16 @@ const Sidebar = () => {
             onClick={() => {
               setToggleSidebar(!toggleSidebar);
             }}
-            className="flex h-16 z-50 cursor-pointer items-center justify-center rounded-r-md bg-blue-950"
+            className="z-50 flex h-16 cursor-pointer items-center justify-center rounded-r-md bg-blue-950"
           >
-            <BiSolidRightArrow className="text-lg text-white " />
+            <BiSolidRightArrow className="text-2xl text-white " />
           </div>
         ) : (
           <div
             onClick={() => {
               setToggleSidebar(!toggleSidebar);
             }}
-            className="flex h-16 z-50 cursor-pointer items-center justify-center rounded-r-md bg-blue-950"
+            className="z-50 flex h-16 cursor-pointer items-center justify-center rounded-r-md bg-blue-950"
           >
             <BiSolidLeftArrow className="text-lg text-white" />
           </div>
