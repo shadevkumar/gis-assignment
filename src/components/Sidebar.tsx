@@ -82,9 +82,6 @@ const Sidebar = () => {
         </div>
       </div>
       <div
-        onClick={() => {
-          setToggleSidebar(!toggleSidebar);
-        }}
         className={`${
           toggleSidebar
             ? "h-screen justify-center "
@@ -92,11 +89,21 @@ const Sidebar = () => {
         } absolute flex h-16 items-center bg-transparent `}
       >
         {toggleSidebar ? (
-          <div className="flex h-16 cursor-pointer items-center justify-center rounded-r-md bg-blue-950">
+          <div
+            onClick={() => {
+              setToggleSidebar(!toggleSidebar);
+            }}
+            className="flex h-16 z-50 cursor-pointer items-center justify-center rounded-r-md bg-blue-950"
+          >
             <BiSolidRightArrow className="text-lg text-white " />
           </div>
         ) : (
-          <div className="flex h-16 cursor-pointer items-center justify-center rounded-r-md bg-blue-950">
+          <div
+            onClick={() => {
+              setToggleSidebar(!toggleSidebar);
+            }}
+            className="flex h-16 z-50 cursor-pointer items-center justify-center rounded-r-md bg-blue-950"
+          >
             <BiSolidLeftArrow className="text-lg text-white" />
           </div>
         )}

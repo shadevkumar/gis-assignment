@@ -76,7 +76,7 @@ export default function Home() {
         )}
 
         <div
-          className={`${isMobile ? "block" : "flex"} w-full justify-between  `}
+          className={`${isMobile ? "flex" : "flex"} w-full justify-between  `}
         >
           {renderComponents()}
         </div>
